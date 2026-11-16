@@ -23,7 +23,7 @@ from app.core.security import (
 )
 from app.config import settings
 from app.database import get_db
-from app.models.user import User, FarmerProfile
+from app.models.user import UserRole, User, FarmerProfile
 from app.schemas.user import (
     RegisterRequest,
     LoginRequest,
@@ -42,6 +42,9 @@ _revoked_tokens: set[str] = set()
 
 @router.post("/register", response_model=UserResponse, status_code=status.HTTP_201_CREATED)
 def register(payload: RegisterRequest, db: Session = Depends(get_db)):
+    # Admin accounts must never be self-service; create them directly in the DB.
+    if payload.role == UserRole.ADMIN:
+        raise HTTPException(status_code=403, detail="Admin accounts cannot be self-registered")
     if db.query(User).filter(User.email == payload.email).first():
         raise HTTPException(status_code=400, detail="Email already registered")
     if payload.phone and db.query(User).filter(User.phone == payload.phone).first():

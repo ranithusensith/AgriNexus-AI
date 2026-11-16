@@ -78,7 +78,7 @@ def get_product_details(listing_id: str, db: Session = Depends(get_db)):
     return ListingDetailOut(
         **{c.name: getattr(listing, c.name) for c in listing.__table__.columns},
         images=listing.images,
-        seller=SellerSummary.model_validate(seller),
+        seller=SellerSummary.from_user(seller),
         category=category,
         average_rating=average_rating,
         review_count=review_count,

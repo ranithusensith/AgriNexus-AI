@@ -16,6 +16,7 @@ class AuthService {
     required String password,
     required String fullName,
     String? phone,
+    String role = 'farmer',
   }) async {
     final data = await _client.post(
       '/users/register',
@@ -24,6 +25,7 @@ class AuthService {
         'email': email,
         'password': password,
         'full_name': fullName,
+        'role': role,
         if (phone != null && phone.isNotEmpty) 'phone': phone,
       },
     );

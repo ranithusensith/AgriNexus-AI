@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
-import '../../auth/auth_service.dart';
+import '../../../shared/state/auth_provider.dart';
 import '../../../shared/api/api_client.dart';
 import '../../../shared/widgets/state_widgets.dart';
 import '../../products/models/listing.dart';
@@ -144,7 +144,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
   Widget _buildContent(BuildContext context) {
     final order = _order!;
     final listing = _listing!;
-    final auth = context.watch<AuthService>();
+    final auth = context.watch<AuthProvider>();
     final currentUserId = auth.currentUser?.id;
     final isSeller = currentUserId == order.sellerId;
     final isBuyer = currentUserId == order.buyerId;

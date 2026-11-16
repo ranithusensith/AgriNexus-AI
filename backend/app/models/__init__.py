@@ -8,3 +8,10 @@ from app.models.crop import Crop, CropHistoryEntry, CropStatus     # noqa: F401
 from app.models.disease import DiseaseDetectionRecord               # noqa: F401
 from app.models.pest import PestDetectionRecord                     # noqa: F401
 from app.models.feedback import FarmerFeedback, FeedbackType        # noqa: F401
+
+# Module 2 (Marketplace)
+from app.models.product import (                                    # noqa: F401
+    Category, Listing, ListingImage, Inquiry, ListingType, ListingStatus,
+)
+from app.models.supplier import SupplierProductType                 # noqa: F401
+from app.models.order import Order, Review, OrderStatus            # noqa: F401

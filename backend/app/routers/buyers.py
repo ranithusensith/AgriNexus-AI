@@ -16,7 +16,7 @@ def get_buyer_profile(user_id: str, db: Session = Depends(get_db)):
     buyer = db.query(User).filter(User.id == user_id).first()
     if not buyer:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Buyer not found")
-    return buyer
+    return SellerSummary.from_user(buyer)
 
 
 @router.get("/me/inquiries", response_model=list[InquiryOut])

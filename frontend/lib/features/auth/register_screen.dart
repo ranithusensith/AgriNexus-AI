@@ -20,6 +20,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final _emailController = TextEditingController();
   final _phoneController = TextEditingController();
   final _passwordController = TextEditingController();
+  String _role = 'farmer';
   bool _loading = false;
   String? _errorMessage;
 
@@ -45,6 +46,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             password: _passwordController.text,
             fullName: _fullNameController.text.trim(),
             phone: _phoneController.text.trim().isEmpty ? null : _phoneController.text.trim(),
+            role: _role,
           );
       if (!mounted) return;
       Navigator.of(context).pushNamedAndRemoveUntil(AppRoutes.dashboard, (route) => false);
@@ -105,6 +107,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   obscureText: true,
                   decoration: InputDecoration(labelText: t.password, border: const OutlineInputBorder()),
                   validator: (v) => (v == null || v.length < 8) ? t.requiredField : null,
+                ),
+                const SizedBox(height: 16),
+                DropdownButtonFormField<String>(
+                  initialValue: _role,
+                  decoration: InputDecoration(labelText: t.registerAs, border: const OutlineInputBorder()),
+                  items: [
+                    DropdownMenuItem(value: 'farmer', child: Text(t.roleFarmer)),
+                    DropdownMenuItem(value: 'buyer', child: Text(t.roleBuyer)),
+                    DropdownMenuItem(value: 'supplier', child: Text(t.roleSupplier)),
+                  ],
+                  onChanged: (v) => setState(() => _role = v ?? 'farmer'),
                 ),
                 const SizedBox(height: 24),
                 PrimaryButton(label: t.register, onPressed: _submit, loading: _loading),

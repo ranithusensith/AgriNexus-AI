@@ -19,7 +19,7 @@ def create_review(
     order = db.query(Order).filter(Order.id == payload.order_id).first()
     if not order:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Order not found")
-    if order.buyer_id != current_user.id:
+    if str(order.buyer_id) != str(current_user.id):
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Only the buyer can review this order")
     if order.status != OrderStatus.completed:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Only completed orders can be reviewed")

@@ -226,6 +226,36 @@ abstract class AppLocalizations {
   /// **'Report an Issue'**
   String get farmerFeedback;
 
+  /// No description provided for @marketplace.
+  ///
+  /// In en, this message translates to:
+  /// **'Marketplace'**
+  String get marketplace;
+
+  /// No description provided for @registerAs.
+  ///
+  /// In en, this message translates to:
+  /// **'Register as'**
+  String get registerAs;
+
+  /// No description provided for @roleFarmer.
+  ///
+  /// In en, this message translates to:
+  /// **'Farmer'**
+  String get roleFarmer;
+
+  /// No description provided for @roleBuyer.
+  ///
+  /// In en, this message translates to:
+  /// **'Buyer'**
+  String get roleBuyer;
+
+  /// No description provided for @roleSupplier.
+  ///
+  /// In en, this message translates to:
+  /// **'Supplier'**
+  String get roleSupplier;
+
   /// No description provided for @district.
   ///
   /// In en, this message translates to:

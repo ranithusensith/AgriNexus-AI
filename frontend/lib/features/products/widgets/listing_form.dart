@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../auth/auth_service.dart';
+import '../../../shared/state/auth_provider.dart';
 import '../models/listing.dart';
 import '../../marketplace/providers/marketplace_provider.dart';
 
@@ -78,7 +78,7 @@ class _ListingFormState extends State<ListingForm> {
 
     // Default listing type follows the current user's role — a supplier
     // creating a listing is almost always listing a supplier product.
-    final role = context.read<AuthService>().currentUser?.role;
+    final role = context.read<AuthProvider>().currentUser?.role;
     _listingType = l?.listingType ??
         (role == 'supplier'
             ? ListingType.supplierProduct

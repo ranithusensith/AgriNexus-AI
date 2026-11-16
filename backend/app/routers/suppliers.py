@@ -14,10 +14,10 @@ router = APIRouter(prefix="/api/suppliers", tags=["suppliers"])
 
 @router.get("/{user_id}", response_model=SellerSummary)
 def get_supplier_profile(user_id: str, db: Session = Depends(get_db)):
-    supplier = db.query(User).filter(User.id == user_id, User.role == UserRole.supplier).first()
+    supplier = db.query(User).filter(User.id == user_id, User.role == UserRole.SUPPLIER).first()
     if not supplier:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Supplier not found")
-    return supplier
+    return SellerSummary.from_user(supplier)
 
 
 @router.get("/{user_id}/products", response_model=list[ListingOut])

@@ -24,6 +24,11 @@
   "cropRecommendation": "பயிர் பரிந்துரை",
   "weather": "வானிலை",
   "farmerFeedback": "பிரச்சினையைப் புகாரளிக்க",
+  "marketplace": "சந்தை",
+  "registerAs": "பதிவு செய்யும் வகை",
+  "roleFarmer": "விவசாயி",
+  "roleBuyer": "வாங்குபவர்",
+  "roleSupplier": "சப்ளையர்",
 
   "district": "மாவட்டம்",
   "location": "இடம்",

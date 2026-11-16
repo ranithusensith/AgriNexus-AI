@@ -15,4 +15,5 @@ class AppRoutes {
   static const cropRecommendation = '/ai/recommendation';
   static const weather = '/weather';
   static const farmerFeedback = '/feedback';
+  static const marketplace = '/marketplace';
 }

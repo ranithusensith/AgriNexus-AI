@@ -41,8 +41,10 @@ class AuthProvider extends ChangeNotifier {
     required String password,
     required String fullName,
     String? phone,
+    String role = 'farmer',
   }) async {
-    await _authService.register(email: email, password: password, fullName: fullName, phone: phone);
+    await _authService.register(
+        email: email, password: password, fullName: fullName, phone: phone, role: role);
     await login(email, password);
   }
 

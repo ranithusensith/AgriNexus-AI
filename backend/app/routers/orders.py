@@ -32,7 +32,7 @@ def create_order(
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Listing not found")
     if listing.status != ListingStatus.active:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="This listing is not currently available")
-    if listing.seller_id == current_user.id:
+    if str(listing.seller_id) == str(current_user.id):
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="You cannot order your own listing")
     if payload.quantity > listing.quantity:
         raise HTTPException(
@@ -107,7 +107,7 @@ def update_order_status(
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Order not found")
 
     # Buyers may only cancel their own pending order; everything else is seller-only.
-    if payload.status == OrderStatus.cancelled and current_user.id == order.buyer_id:
+    if payload.status == OrderStatus.cancelled and str(current_user.id) == str(order.buyer_id):
         pass
     else:
         assert_is_order_seller(order, current_user)

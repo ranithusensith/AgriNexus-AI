@@ -30,6 +30,16 @@ class Settings(BaseSettings):
     cors_origins: str = "http://localhost:3000,http://localhost:8080"
     upload_dir: str = "./uploads"
 
+    # Marketplace listing images (local dev by default; "s3" needs boto3 + S3_* vars)
+    image_storage_backend: str = "local"  # local | s3
+    local_upload_dir: str = "./uploads/listings"
+    local_upload_url_prefix: str = "/uploads/listings"  # served by the /uploads mount
+    s3_bucket_name: str = ""
+    s3_region: str = ""
+    s3_access_key_id: str = ""
+    s3_secret_access_key: str = ""
+    s3_public_url_base: str = ""
+
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
 
     @property
@@ -38,3 +48,7 @@ class Settings(BaseSettings):
 
 
 settings = Settings()
+
+
+def get_settings() -> Settings:
+    return settings

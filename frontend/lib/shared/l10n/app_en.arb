@@ -25,6 +25,11 @@
   "cropRecommendation": "Crop Recommendation",
   "weather": "Weather",
   "farmerFeedback": "Report an Issue",
+  "marketplace": "Marketplace",
+  "registerAs": "Register as",
+  "roleFarmer": "Farmer",
+  "roleBuyer": "Buyer",
+  "roleSupplier": "Supplier",
 
   "district": "District",
   "location": "Location",

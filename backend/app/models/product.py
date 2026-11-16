@@ -12,6 +12,7 @@ from sqlalchemy import (
     Column, String, Text, Integer, Numeric, Boolean, DateTime,
     ForeignKey, Enum, UniqueConstraint, Index,
 )
+from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
 
@@ -53,7 +54,7 @@ class Listing(Base):
     __tablename__ = "listings"
 
     id = Column(String(36), primary_key=True, default=_uuid)
-    seller_id = Column(String(36), ForeignKey("users.id"), nullable=False, index=True)
+    seller_id = Column(UUID(as_uuid=False), ForeignKey("users.id"), nullable=False, index=True)
     category_id = Column(String(36), ForeignKey("categories.id"), nullable=False, index=True)
 
     listing_type = Column(Enum(ListingType), nullable=False, default=ListingType.farmer_product)
@@ -99,7 +100,7 @@ class Inquiry(Base):
 
     id = Column(String(36), primary_key=True, default=_uuid)
     listing_id = Column(String(36), ForeignKey("listings.id"), nullable=False, index=True)
-    buyer_id = Column(String(36), ForeignKey("users.id"), nullable=False, index=True)
+    buyer_id = Column(UUID(as_uuid=False), ForeignKey("users.id"), nullable=False, index=True)
     message = Column(Text, nullable=False)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
 

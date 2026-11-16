@@ -1,17 +1,16 @@
 """
-Module 1 (Farmer + AI Agriculture) FastAPI app.
+AgriNexus AI FastAPI app.
 
-Do NOT mount Marketplace or Community routers here — this app is meant to be
-included into the team's combined app, e.g.:
+Mounts Module 1 (Farmer + AI Agriculture) and Module 2 (Marketplace) routers.
+Module 3 (Communication + Community) routers are not implemented yet.
 
-    from app.main import app as farmer_app
-    main_app.mount("/", farmer_app)   # or use a shared router aggregator
-
-Run standalone for development with: uvicorn app.main:app --reload
+Run for development with: uvicorn app.main:app --reload
 """
 import os
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
+from fastapi.responses import JSONResponse
+from sqlalchemy.exc import DataError
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
@@ -25,11 +24,18 @@ from app.routers import (
     crop_recommendations,
     weather,
     farmer_feedback,
+    buyers,
+    categories,
+    listings,
+    orders,
+    products,
+    reviews,
+    suppliers,
 )
 
 app = FastAPI(
-    title="AgriNexus AI - Module 1: Farmer + AI Agriculture",
-    description="Farmer auth, profiles, farms, crops, and AI-assisted agriculture features.",
+    title="AgriNexus AI",
+    description="Farmer + AI agriculture (Module 1) and Marketplace (Module 2).",
     version="0.1.0",
 )
 
@@ -53,7 +59,17 @@ app.include_router(crop_recommendations.router)
 app.include_router(weather.router)
 app.include_router(farmer_feedback.router)
 
+# Module 2 - Marketplace
+for _r in (buyers, categories, listings, orders, products, reviews, suppliers):
+    app.include_router(_r.router)
+
+
+@app.exception_handler(DataError)
+async def invalid_value_handler(request: Request, exc: DataError):
+    """Malformed ids (e.g. /api/suppliers/not-a-uuid) are a client error, not a 500."""
+    return JSONResponse(status_code=422, content={"detail": "Invalid identifier or value"})
+
 
 @app.get("/health", tags=["health"])
 def health_check():
-    return {"status": "ok", "module": "farmer-ai"}
+    return {"status": "ok", "modules": ["farmer-ai", "marketplace"]}

@@ -26,6 +26,12 @@ import 'features/pest/pest_identification_screen.dart';
 import 'features/recommendation/crop_recommendation_screen.dart';
 import 'features/weather/weather_screen.dart';
 import 'features/feedback/farmer_feedback_screen.dart';
+import 'features/marketplace/providers/marketplace_provider.dart';
+import 'features/marketplace/screens/marketplace_home_screen.dart';
+import 'features/marketplace/services/marketplace_api_service.dart';
+import 'features/orders/providers/order_provider.dart';
+import 'features/products/providers/listing_provider.dart';
+import 'shared/api/api_client.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -41,6 +47,11 @@ class AgriNexusApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => AuthProvider()..bootstrap()),
         ChangeNotifierProvider(create: (_) => LocaleProvider()..loadSavedLocale()),
+        // Module 2 (Marketplace) shares one API service instance.
+        Provider(create: (_) => MarketplaceApiService(ApiClient.instance)),
+        ChangeNotifierProvider(create: (c) => MarketplaceProvider(c.read<MarketplaceApiService>())),
+        ChangeNotifierProvider(create: (c) => ListingProvider(c.read<MarketplaceApiService>())),
+        ChangeNotifierProvider(create: (c) => OrderProvider(c.read<MarketplaceApiService>())),
       ],
       child: Consumer<LocaleProvider>(
         builder: (context, localeProvider, _) {
@@ -109,6 +120,8 @@ class AgriNexusApp extends StatelessWidget {
         return MaterialPageRoute(builder: (_) => const WeatherScreen());
       case AppRoutes.farmerFeedback:
         return MaterialPageRoute(builder: (_) => const FarmerFeedbackScreen());
+      case AppRoutes.marketplace:
+        return MaterialPageRoute(builder: (_) => const MarketplaceHomeScreen());
       default:
         return null;
     }

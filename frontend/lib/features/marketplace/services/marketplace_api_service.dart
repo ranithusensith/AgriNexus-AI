@@ -1,3 +1,4 @@
+import 'dart:io';
 import '../../../shared/api/api_client.dart';
 import '../models/category.dart';
 import '../models/inquiry.dart';
@@ -106,9 +107,9 @@ class MarketplaceApiService {
       {bool setPrimary = false}) async {
     final res = await _client.uploadFile(
       '/api/listings/$listingId/images',
-      'file',
-      filePath,
-      fields: {'set_primary': setPrimary.toString()},
+      file: File(filePath),
+      fieldName: 'file',
+      extraFields: {'set_primary': setPrimary.toString()},
     );
     return ListingImage.fromJson(res as Map<String, dynamic>);
   }

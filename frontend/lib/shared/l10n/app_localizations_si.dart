@@ -334,4 +334,220 @@ class AppLocalizationsSi extends AppLocalizations {
 
   @override
   String get feedbackOther => 'වෙනත්';
+
+  @override
+  String get community => 'ප්‍රජාව';
+
+  @override
+  String get chats => 'කතාබස්';
+
+  @override
+  String get adminReports => 'වාර්තා සමාලෝචනය';
+
+  @override
+  String get noConversations =>
+      'තවම කතාබස් නැත. ප්‍රජා පළකිරීමකින් කෙනෙකුට පණිවිඩයක් යවන්න.';
+
+  @override
+  String get typeMessage => 'පණිවිඩයක් ටයිප් කරන්න…';
+
+  @override
+  String get send => 'යවන්න';
+
+  @override
+  String get noMessages => 'තවම පණිවිඩ නැත. ආයුබෝවන් කියන්න!';
+
+  @override
+  String get messageAuthor => 'පණිවිඩයක් යවන්න';
+
+  @override
+  String aboutListing(String title) {
+    return 'සම්බන්ධව: $title';
+  }
+
+  @override
+  String get you => 'ඔබ';
+
+  @override
+  String get newPost => 'නව පළකිරීම';
+
+  @override
+  String get editPost => 'පළකිරීම සංස්කරණය';
+
+  @override
+  String get postTitle => 'මාතෘකාව';
+
+  @override
+  String get postBody => 'ඔබට බෙදාගැනීමට අවශ්‍ය කුමක්ද?';
+
+  @override
+  String get postCategory => 'කාණ්ඩය';
+
+  @override
+  String get addImage => 'රූපයක් එක් කරන්න';
+
+  @override
+  String get removeImage => 'රූපය ඉවත් කරන්න';
+
+  @override
+  String get publish => 'පළ කරන්න';
+
+  @override
+  String get noPosts => 'තවම පළකිරීම් නැත. පළමුවෙන් බෙදාගන්න!';
+
+  @override
+  String get searchPosts => 'පළකිරීම් සොයන්න';
+
+  @override
+  String get filterAll => 'සියල්ල';
+
+  @override
+  String get categoryGeneral => 'සාමාන්‍ය';
+
+  @override
+  String get categoryCrops => 'භෝග';
+
+  @override
+  String get categoryPestsDiseases => 'පළිබෝධ සහ රෝග';
+
+  @override
+  String get categoryWeather => 'කාලගුණය';
+
+  @override
+  String get categoryMarket => 'වෙළඳපොළ';
+
+  @override
+  String get categoryEquipment => 'උපකරණ';
+
+  @override
+  String get categoryOther => 'වෙනත්';
+
+  @override
+  String get comments => 'අදහස්';
+
+  @override
+  String get noComments => 'තවම අදහස් නැත';
+
+  @override
+  String get writeComment => 'අදහසක් ලියන්න…';
+
+  @override
+  String get deletePost => 'පළකිරීම මකන්න';
+
+  @override
+  String get confirmDeletePost => 'මෙම පළකිරීම මකන්නද? මෙය ආපසු හැරවිය නොහැක.';
+
+  @override
+  String get deleteComment => 'අදහස මකන්න';
+
+  @override
+  String get confirmDeleteComment => 'මෙම අදහස මකන්නද?';
+
+  @override
+  String get editComment => 'අදහස සංස්කරණය';
+
+  @override
+  String get report => 'වාර්තා කරන්න';
+
+  @override
+  String get reportContent => 'අන්තර්ගතය වාර්තා කරන්න';
+
+  @override
+  String get reportUser => 'පරිශීලකයා වාර්තා කරන්න';
+
+  @override
+  String get reportReason => 'හේතුව';
+
+  @override
+  String get reportDetails => 'විස්තර (විකල්ප)';
+
+  @override
+  String get reportSubmitted =>
+      'ස්තූතියි. පරිපාලකයෙකු ඔබගේ වාර්තාව සමාලෝචනය කරනු ඇත.';
+
+  @override
+  String get alreadyReported => 'ඔබ මෙය දැනටමත් වාර්තා කර ඇත.';
+
+  @override
+  String get reasonSpam => 'ස්පෑම්';
+
+  @override
+  String get reasonHarassment => 'හිරිහැර කිරීම';
+
+  @override
+  String get reasonInappropriate => 'නුසුදුසු';
+
+  @override
+  String get reasonMisinformation => 'වැරදි තොරතුරු';
+
+  @override
+  String get reasonScam => 'වංචාව';
+
+  @override
+  String get reasonOther => 'වෙනත්';
+
+  @override
+  String get reportStatusOpen => 'විවෘත';
+
+  @override
+  String get reportStatusReviewed => 'සමාලෝචනය කළ';
+
+  @override
+  String get reportStatusResolved => 'විසඳූ';
+
+  @override
+  String get reportStatusDismissed => 'ප්‍රතික්ෂේප කළ';
+
+  @override
+  String get targetPost => 'පළකිරීම';
+
+  @override
+  String get targetComment => 'අදහස';
+
+  @override
+  String get targetUser => 'පරිශීලක';
+
+  @override
+  String get targetListing => 'ලැයිස්තුගත කිරීම';
+
+  @override
+  String get markReviewed => 'සමාලෝචිත ලෙස සලකුණු කරන්න';
+
+  @override
+  String get resolve => 'විසඳන්න';
+
+  @override
+  String get dismiss => 'ප්‍රතික්ෂේප කරන්න';
+
+  @override
+  String get adminNote => 'සටහන (විකල්ප)';
+
+  @override
+  String get noReports => 'වාර්තා නැත';
+
+  @override
+  String reportedBy(String name) {
+    return '$name විසින් වාර්තා කළා';
+  }
+
+  @override
+  String get targetDeleted => 'මෙම අයිතමය තවදුරටත් නොපවතී';
+
+  @override
+  String get postNotFound => 'මෙම පළකිරීම තවදුරටත් නොපවතී.';
+
+  @override
+  String get notAllowed => 'ඔබට එය කිරීමට අවසර නැත.';
+
+  @override
+  String get reportUpdated => 'වාර්තාව යාවත්කාලීන කළා';
+
+  @override
+  String get adminOnly => 'මෙම පිටුව බැලිය හැක්කේ පරිපාලකයින්ට පමණි.';
+
+  @override
+  String get roleAdmin => 'පරිපාලක';
+
+  @override
+  String get roleCommunityMember => 'ප්‍රජා සාමාජික';
 }

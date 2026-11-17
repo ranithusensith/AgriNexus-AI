@@ -334,4 +334,221 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String get feedbackOther => 'மற்றவை';
+
+  @override
+  String get community => 'சமூகம்';
+
+  @override
+  String get chats => 'அரட்டைகள்';
+
+  @override
+  String get adminReports => 'புகார்களை மதிப்பாய்வு';
+
+  @override
+  String get noConversations =>
+      'இன்னும் உரையாடல்கள் இல்லை. சமூக இடுகையிலிருந்து ஒருவருக்கு செய்தி அனுப்புங்கள்.';
+
+  @override
+  String get typeMessage => 'செய்தியைத் தட்டச்சு செய்யவும்…';
+
+  @override
+  String get send => 'அனுப்பு';
+
+  @override
+  String get noMessages => 'இன்னும் செய்திகள் இல்லை. வணக்கம் சொல்லுங்கள்!';
+
+  @override
+  String get messageAuthor => 'செய்தி அனுப்பு';
+
+  @override
+  String aboutListing(String title) {
+    return 'தொடர்பாக: $title';
+  }
+
+  @override
+  String get you => 'நீங்கள்';
+
+  @override
+  String get newPost => 'புதிய இடுகை';
+
+  @override
+  String get editPost => 'இடுகையைத் திருத்து';
+
+  @override
+  String get postTitle => 'தலைப்பு';
+
+  @override
+  String get postBody => 'நீங்கள் என்ன பகிர விரும்புகிறீர்கள்?';
+
+  @override
+  String get postCategory => 'வகை';
+
+  @override
+  String get addImage => 'படம் சேர்';
+
+  @override
+  String get removeImage => 'படத்தை அகற்று';
+
+  @override
+  String get publish => 'வெளியிடு';
+
+  @override
+  String get noPosts => 'இன்னும் இடுகைகள் இல்லை. முதலில் பகிருங்கள்!';
+
+  @override
+  String get searchPosts => 'இடுகைகளைத் தேடு';
+
+  @override
+  String get filterAll => 'அனைத்தும்';
+
+  @override
+  String get categoryGeneral => 'பொது';
+
+  @override
+  String get categoryCrops => 'பயிர்கள்';
+
+  @override
+  String get categoryPestsDiseases => 'பூச்சிகள் & நோய்கள்';
+
+  @override
+  String get categoryWeather => 'வானிலை';
+
+  @override
+  String get categoryMarket => 'சந்தை';
+
+  @override
+  String get categoryEquipment => 'உபகரணங்கள்';
+
+  @override
+  String get categoryOther => 'மற்றவை';
+
+  @override
+  String get comments => 'கருத்துகள்';
+
+  @override
+  String get noComments => 'இன்னும் கருத்துகள் இல்லை';
+
+  @override
+  String get writeComment => 'கருத்தை எழுதவும்…';
+
+  @override
+  String get deletePost => 'இடுகையை நீக்கு';
+
+  @override
+  String get confirmDeletePost => 'இந்த இடுகையை நீக்கவா? இதை மீட்க முடியாது.';
+
+  @override
+  String get deleteComment => 'கருத்தை நீக்கு';
+
+  @override
+  String get confirmDeleteComment => 'இந்தக் கருத்தை நீக்கவா?';
+
+  @override
+  String get editComment => 'கருத்தைத் திருத்து';
+
+  @override
+  String get report => 'புகாரளி';
+
+  @override
+  String get reportContent => 'உள்ளடக்கத்தைப் புகாரளி';
+
+  @override
+  String get reportUser => 'பயனரைப் புகாரளி';
+
+  @override
+  String get reportReason => 'காரணம்';
+
+  @override
+  String get reportDetails => 'விவரங்கள் (விருப்பத்தேர்வு)';
+
+  @override
+  String get reportSubmitted =>
+      'நன்றி. நிர்வாகி உங்கள் புகாரை மதிப்பாய்வு செய்வார்.';
+
+  @override
+  String get alreadyReported => 'நீங்கள் இதை ஏற்கனவே புகாரளித்துள்ளீர்கள்.';
+
+  @override
+  String get reasonSpam => 'ஸ்பேம்';
+
+  @override
+  String get reasonHarassment => 'துன்புறுத்தல்';
+
+  @override
+  String get reasonInappropriate => 'பொருத்தமற்றது';
+
+  @override
+  String get reasonMisinformation => 'தவறான தகவல்';
+
+  @override
+  String get reasonScam => 'மோசடி';
+
+  @override
+  String get reasonOther => 'மற்றவை';
+
+  @override
+  String get reportStatusOpen => 'திறந்தது';
+
+  @override
+  String get reportStatusReviewed => 'மதிப்பாய்வு செய்யப்பட்டது';
+
+  @override
+  String get reportStatusResolved => 'தீர்க்கப்பட்டது';
+
+  @override
+  String get reportStatusDismissed => 'நிராகரிக்கப்பட்டது';
+
+  @override
+  String get targetPost => 'இடுகை';
+
+  @override
+  String get targetComment => 'கருத்து';
+
+  @override
+  String get targetUser => 'பயனர்';
+
+  @override
+  String get targetListing => 'பட்டியல்';
+
+  @override
+  String get markReviewed => 'மதிப்பாய்வு செய்ததாகக் குறி';
+
+  @override
+  String get resolve => 'தீர்';
+
+  @override
+  String get dismiss => 'நிராகரி';
+
+  @override
+  String get adminNote => 'குறிப்பு (விருப்பத்தேர்வு)';
+
+  @override
+  String get noReports => 'புகார்கள் இல்லை';
+
+  @override
+  String reportedBy(String name) {
+    return '$name புகாரளித்தார்';
+  }
+
+  @override
+  String get targetDeleted => 'இந்த உருப்படி இனி இல்லை';
+
+  @override
+  String get postNotFound => 'இந்த இடுகை இனி இல்லை.';
+
+  @override
+  String get notAllowed => 'அதைச் செய்ய உங்களுக்கு அனுமதி இல்லை.';
+
+  @override
+  String get reportUpdated => 'புகார் புதுப்பிக்கப்பட்டது';
+
+  @override
+  String get adminOnly =>
+      'நிர்வாகிகள் மட்டுமே இந்தப் பக்கத்தைப் பார்க்க முடியும்.';
+
+  @override
+  String get roleAdmin => 'நிர்வாகி';
+
+  @override
+  String get roleCommunityMember => 'சமூக உறுப்பினர்';
 }

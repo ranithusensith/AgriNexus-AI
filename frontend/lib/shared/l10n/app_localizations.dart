@@ -741,6 +741,426 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Other'**
   String get feedbackOther;
+
+  /// No description provided for @community.
+  ///
+  /// In en, this message translates to:
+  /// **'Community'**
+  String get community;
+
+  /// No description provided for @chats.
+  ///
+  /// In en, this message translates to:
+  /// **'Chats'**
+  String get chats;
+
+  /// No description provided for @adminReports.
+  ///
+  /// In en, this message translates to:
+  /// **'Review Reports'**
+  String get adminReports;
+
+  /// No description provided for @noConversations.
+  ///
+  /// In en, this message translates to:
+  /// **'No conversations yet. Message someone from a community post.'**
+  String get noConversations;
+
+  /// No description provided for @typeMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Type a message…'**
+  String get typeMessage;
+
+  /// No description provided for @send.
+  ///
+  /// In en, this message translates to:
+  /// **'Send'**
+  String get send;
+
+  /// No description provided for @noMessages.
+  ///
+  /// In en, this message translates to:
+  /// **'No messages yet. Say hello!'**
+  String get noMessages;
+
+  /// No description provided for @messageAuthor.
+  ///
+  /// In en, this message translates to:
+  /// **'Message'**
+  String get messageAuthor;
+
+  /// No description provided for @aboutListing.
+  ///
+  /// In en, this message translates to:
+  /// **'About: {title}'**
+  String aboutListing(String title);
+
+  /// No description provided for @you.
+  ///
+  /// In en, this message translates to:
+  /// **'You'**
+  String get you;
+
+  /// No description provided for @newPost.
+  ///
+  /// In en, this message translates to:
+  /// **'New Post'**
+  String get newPost;
+
+  /// No description provided for @editPost.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Post'**
+  String get editPost;
+
+  /// No description provided for @postTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Title'**
+  String get postTitle;
+
+  /// No description provided for @postBody.
+  ///
+  /// In en, this message translates to:
+  /// **'What would you like to share?'**
+  String get postBody;
+
+  /// No description provided for @postCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'Category'**
+  String get postCategory;
+
+  /// No description provided for @addImage.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Image'**
+  String get addImage;
+
+  /// No description provided for @removeImage.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove Image'**
+  String get removeImage;
+
+  /// No description provided for @publish.
+  ///
+  /// In en, this message translates to:
+  /// **'Publish'**
+  String get publish;
+
+  /// No description provided for @noPosts.
+  ///
+  /// In en, this message translates to:
+  /// **'No posts yet. Be the first to share!'**
+  String get noPosts;
+
+  /// No description provided for @searchPosts.
+  ///
+  /// In en, this message translates to:
+  /// **'Search posts'**
+  String get searchPosts;
+
+  /// No description provided for @filterAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get filterAll;
+
+  /// No description provided for @categoryGeneral.
+  ///
+  /// In en, this message translates to:
+  /// **'General'**
+  String get categoryGeneral;
+
+  /// No description provided for @categoryCrops.
+  ///
+  /// In en, this message translates to:
+  /// **'Crops'**
+  String get categoryCrops;
+
+  /// No description provided for @categoryPestsDiseases.
+  ///
+  /// In en, this message translates to:
+  /// **'Pests & Diseases'**
+  String get categoryPestsDiseases;
+
+  /// No description provided for @categoryWeather.
+  ///
+  /// In en, this message translates to:
+  /// **'Weather'**
+  String get categoryWeather;
+
+  /// No description provided for @categoryMarket.
+  ///
+  /// In en, this message translates to:
+  /// **'Market'**
+  String get categoryMarket;
+
+  /// No description provided for @categoryEquipment.
+  ///
+  /// In en, this message translates to:
+  /// **'Equipment'**
+  String get categoryEquipment;
+
+  /// No description provided for @categoryOther.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get categoryOther;
+
+  /// No description provided for @comments.
+  ///
+  /// In en, this message translates to:
+  /// **'Comments'**
+  String get comments;
+
+  /// No description provided for @noComments.
+  ///
+  /// In en, this message translates to:
+  /// **'No comments yet'**
+  String get noComments;
+
+  /// No description provided for @writeComment.
+  ///
+  /// In en, this message translates to:
+  /// **'Write a comment…'**
+  String get writeComment;
+
+  /// No description provided for @deletePost.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Post'**
+  String get deletePost;
+
+  /// No description provided for @confirmDeletePost.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete this post? This cannot be undone.'**
+  String get confirmDeletePost;
+
+  /// No description provided for @deleteComment.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Comment'**
+  String get deleteComment;
+
+  /// No description provided for @confirmDeleteComment.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete this comment?'**
+  String get confirmDeleteComment;
+
+  /// No description provided for @editComment.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Comment'**
+  String get editComment;
+
+  /// No description provided for @report.
+  ///
+  /// In en, this message translates to:
+  /// **'Report'**
+  String get report;
+
+  /// No description provided for @reportContent.
+  ///
+  /// In en, this message translates to:
+  /// **'Report Content'**
+  String get reportContent;
+
+  /// No description provided for @reportUser.
+  ///
+  /// In en, this message translates to:
+  /// **'Report User'**
+  String get reportUser;
+
+  /// No description provided for @reportReason.
+  ///
+  /// In en, this message translates to:
+  /// **'Reason'**
+  String get reportReason;
+
+  /// No description provided for @reportDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Details (optional)'**
+  String get reportDetails;
+
+  /// No description provided for @reportSubmitted.
+  ///
+  /// In en, this message translates to:
+  /// **'Thanks. An admin will review your report.'**
+  String get reportSubmitted;
+
+  /// No description provided for @alreadyReported.
+  ///
+  /// In en, this message translates to:
+  /// **'You have already reported this.'**
+  String get alreadyReported;
+
+  /// No description provided for @reasonSpam.
+  ///
+  /// In en, this message translates to:
+  /// **'Spam'**
+  String get reasonSpam;
+
+  /// No description provided for @reasonHarassment.
+  ///
+  /// In en, this message translates to:
+  /// **'Harassment'**
+  String get reasonHarassment;
+
+  /// No description provided for @reasonInappropriate.
+  ///
+  /// In en, this message translates to:
+  /// **'Inappropriate'**
+  String get reasonInappropriate;
+
+  /// No description provided for @reasonMisinformation.
+  ///
+  /// In en, this message translates to:
+  /// **'Misinformation'**
+  String get reasonMisinformation;
+
+  /// No description provided for @reasonScam.
+  ///
+  /// In en, this message translates to:
+  /// **'Scam'**
+  String get reasonScam;
+
+  /// No description provided for @reasonOther.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get reasonOther;
+
+  /// No description provided for @reportStatusOpen.
+  ///
+  /// In en, this message translates to:
+  /// **'Open'**
+  String get reportStatusOpen;
+
+  /// No description provided for @reportStatusReviewed.
+  ///
+  /// In en, this message translates to:
+  /// **'Reviewed'**
+  String get reportStatusReviewed;
+
+  /// No description provided for @reportStatusResolved.
+  ///
+  /// In en, this message translates to:
+  /// **'Resolved'**
+  String get reportStatusResolved;
+
+  /// No description provided for @reportStatusDismissed.
+  ///
+  /// In en, this message translates to:
+  /// **'Dismissed'**
+  String get reportStatusDismissed;
+
+  /// No description provided for @targetPost.
+  ///
+  /// In en, this message translates to:
+  /// **'Post'**
+  String get targetPost;
+
+  /// No description provided for @targetComment.
+  ///
+  /// In en, this message translates to:
+  /// **'Comment'**
+  String get targetComment;
+
+  /// No description provided for @targetUser.
+  ///
+  /// In en, this message translates to:
+  /// **'User'**
+  String get targetUser;
+
+  /// No description provided for @targetListing.
+  ///
+  /// In en, this message translates to:
+  /// **'Listing'**
+  String get targetListing;
+
+  /// No description provided for @markReviewed.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark Reviewed'**
+  String get markReviewed;
+
+  /// No description provided for @resolve.
+  ///
+  /// In en, this message translates to:
+  /// **'Resolve'**
+  String get resolve;
+
+  /// No description provided for @dismiss.
+  ///
+  /// In en, this message translates to:
+  /// **'Dismiss'**
+  String get dismiss;
+
+  /// No description provided for @adminNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Note (optional)'**
+  String get adminNote;
+
+  /// No description provided for @noReports.
+  ///
+  /// In en, this message translates to:
+  /// **'No reports'**
+  String get noReports;
+
+  /// No description provided for @reportedBy.
+  ///
+  /// In en, this message translates to:
+  /// **'Reported by {name}'**
+  String reportedBy(String name);
+
+  /// No description provided for @targetDeleted.
+  ///
+  /// In en, this message translates to:
+  /// **'This item no longer exists'**
+  String get targetDeleted;
+
+  /// No description provided for @postNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'This post no longer exists.'**
+  String get postNotFound;
+
+  /// No description provided for @notAllowed.
+  ///
+  /// In en, this message translates to:
+  /// **'You don\'t have permission to do that.'**
+  String get notAllowed;
+
+  /// No description provided for @reportUpdated.
+  ///
+  /// In en, this message translates to:
+  /// **'Report updated'**
+  String get reportUpdated;
+
+  /// No description provided for @adminOnly.
+  ///
+  /// In en, this message translates to:
+  /// **'Only admins can view this page.'**
+  String get adminOnly;
+
+  /// No description provided for @roleAdmin.
+  ///
+  /// In en, this message translates to:
+  /// **'Admin'**
+  String get roleAdmin;
+
+  /// No description provided for @roleCommunityMember.
+  ///
+  /// In en, this message translates to:
+  /// **'Community Member'**
+  String get roleCommunityMember;
 }
 
 class _AppLocalizationsDelegate

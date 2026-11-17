@@ -334,4 +334,219 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get feedbackOther => 'Other';
+
+  @override
+  String get community => 'Community';
+
+  @override
+  String get chats => 'Chats';
+
+  @override
+  String get adminReports => 'Review Reports';
+
+  @override
+  String get noConversations =>
+      'No conversations yet. Message someone from a community post.';
+
+  @override
+  String get typeMessage => 'Type a message…';
+
+  @override
+  String get send => 'Send';
+
+  @override
+  String get noMessages => 'No messages yet. Say hello!';
+
+  @override
+  String get messageAuthor => 'Message';
+
+  @override
+  String aboutListing(String title) {
+    return 'About: $title';
+  }
+
+  @override
+  String get you => 'You';
+
+  @override
+  String get newPost => 'New Post';
+
+  @override
+  String get editPost => 'Edit Post';
+
+  @override
+  String get postTitle => 'Title';
+
+  @override
+  String get postBody => 'What would you like to share?';
+
+  @override
+  String get postCategory => 'Category';
+
+  @override
+  String get addImage => 'Add Image';
+
+  @override
+  String get removeImage => 'Remove Image';
+
+  @override
+  String get publish => 'Publish';
+
+  @override
+  String get noPosts => 'No posts yet. Be the first to share!';
+
+  @override
+  String get searchPosts => 'Search posts';
+
+  @override
+  String get filterAll => 'All';
+
+  @override
+  String get categoryGeneral => 'General';
+
+  @override
+  String get categoryCrops => 'Crops';
+
+  @override
+  String get categoryPestsDiseases => 'Pests & Diseases';
+
+  @override
+  String get categoryWeather => 'Weather';
+
+  @override
+  String get categoryMarket => 'Market';
+
+  @override
+  String get categoryEquipment => 'Equipment';
+
+  @override
+  String get categoryOther => 'Other';
+
+  @override
+  String get comments => 'Comments';
+
+  @override
+  String get noComments => 'No comments yet';
+
+  @override
+  String get writeComment => 'Write a comment…';
+
+  @override
+  String get deletePost => 'Delete Post';
+
+  @override
+  String get confirmDeletePost => 'Delete this post? This cannot be undone.';
+
+  @override
+  String get deleteComment => 'Delete Comment';
+
+  @override
+  String get confirmDeleteComment => 'Delete this comment?';
+
+  @override
+  String get editComment => 'Edit Comment';
+
+  @override
+  String get report => 'Report';
+
+  @override
+  String get reportContent => 'Report Content';
+
+  @override
+  String get reportUser => 'Report User';
+
+  @override
+  String get reportReason => 'Reason';
+
+  @override
+  String get reportDetails => 'Details (optional)';
+
+  @override
+  String get reportSubmitted => 'Thanks. An admin will review your report.';
+
+  @override
+  String get alreadyReported => 'You have already reported this.';
+
+  @override
+  String get reasonSpam => 'Spam';
+
+  @override
+  String get reasonHarassment => 'Harassment';
+
+  @override
+  String get reasonInappropriate => 'Inappropriate';
+
+  @override
+  String get reasonMisinformation => 'Misinformation';
+
+  @override
+  String get reasonScam => 'Scam';
+
+  @override
+  String get reasonOther => 'Other';
+
+  @override
+  String get reportStatusOpen => 'Open';
+
+  @override
+  String get reportStatusReviewed => 'Reviewed';
+
+  @override
+  String get reportStatusResolved => 'Resolved';
+
+  @override
+  String get reportStatusDismissed => 'Dismissed';
+
+  @override
+  String get targetPost => 'Post';
+
+  @override
+  String get targetComment => 'Comment';
+
+  @override
+  String get targetUser => 'User';
+
+  @override
+  String get targetListing => 'Listing';
+
+  @override
+  String get markReviewed => 'Mark Reviewed';
+
+  @override
+  String get resolve => 'Resolve';
+
+  @override
+  String get dismiss => 'Dismiss';
+
+  @override
+  String get adminNote => 'Note (optional)';
+
+  @override
+  String get noReports => 'No reports';
+
+  @override
+  String reportedBy(String name) {
+    return 'Reported by $name';
+  }
+
+  @override
+  String get targetDeleted => 'This item no longer exists';
+
+  @override
+  String get postNotFound => 'This post no longer exists.';
+
+  @override
+  String get notAllowed => 'You don\'t have permission to do that.';
+
+  @override
+  String get reportUpdated => 'Report updated';
+
+  @override
+  String get adminOnly => 'Only admins can view this page.';
+
+  @override
+  String get roleAdmin => 'Admin';
+
+  @override
+  String get roleCommunityMember => 'Community Member';
 }

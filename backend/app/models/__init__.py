@@ -15,3 +15,10 @@ from app.models.product import (                                    # noqa: F401
 )
 from app.models.supplier import SupplierProductType                 # noqa: F401
 from app.models.order import Order, Review, OrderStatus            # noqa: F401
+
+# Module 3 (Communication + Community)
+from app.models.chat import Conversation, Message                  # noqa: F401
+from app.models.community import Post, Comment, PostLike, PostCategory  # noqa: F401
+from app.models.issue_report import (                               # noqa: F401
+    IssueReport, ReportTargetType, ReportReason, ReportStatus,
+)

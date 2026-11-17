@@ -1,8 +1,8 @@
 """
 AgriNexus AI FastAPI app.
 
-Mounts Module 1 (Farmer + AI Agriculture) and Module 2 (Marketplace) routers.
-Module 3 (Communication + Community) routers are not implemented yet.
+Mounts Module 1 (Farmer + AI Agriculture), Module 2 (Marketplace) and
+Module 3 (Communication + Community) routers.
 
 Run for development with: uvicorn app.main:app --reload
 """
@@ -31,11 +31,14 @@ from app.routers import (
     products,
     reviews,
     suppliers,
+    chat,
+    community,
+    issue_reports,
 )
 
 app = FastAPI(
     title="AgriNexus AI",
-    description="Farmer + AI agriculture (Module 1) and Marketplace (Module 2).",
+    description="Farmer + AI agriculture (Module 1), Marketplace (Module 2) and Communication + Community (Module 3).",
     version="0.1.0",
 )
 
@@ -63,6 +66,10 @@ app.include_router(farmer_feedback.router)
 for _r in (buyers, categories, listings, orders, products, reviews, suppliers):
     app.include_router(_r.router)
 
+# Module 3 - Communication + Community
+for _r in (chat, community, issue_reports):
+    app.include_router(_r.router)
+
 
 @app.exception_handler(DataError)
 async def invalid_value_handler(request: Request, exc: DataError):
@@ -72,4 +79,4 @@ async def invalid_value_handler(request: Request, exc: DataError):
 
 @app.get("/health", tags=["health"])
 def health_check():
-    return {"status": "ok", "modules": ["farmer-ai", "marketplace"]}
+    return {"status": "ok", "modules": ["farmer-ai", "marketplace", "community"]}

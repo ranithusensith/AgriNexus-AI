@@ -48,3 +48,39 @@ def assert_is_order_buyer_or_seller(order, user: User) -> None:
         return
     if str(user.id) not in (str(order.buyer_id), str(order.seller_id)):
         raise _forbidden("You are not a party to this order")
+
+
+# ---------------------------------------------------------------------------
+# Module 3 (Communication + Community)
+# ---------------------------------------------------------------------------
+
+def assert_conversation_participant(conversation, user: User) -> None:
+    """Chats are private: only the two participants, not even admins."""
+    if str(user.id) not in conversation.participant_ids():
+        raise _forbidden("You are not a participant in this conversation")
+
+
+def assert_is_author(content, user: User) -> None:
+    """Editing a post/comment is limited to its author."""
+    if str(content.author_id) != str(user.id):
+        raise _forbidden("You can only edit your own content")
+
+
+def assert_author_or_admin(content, user: User) -> None:
+    """Deleting a post/comment: its author, or any admin (moderation)."""
+    if _is_admin(user):
+        return
+    if str(content.author_id) != str(user.id):
+        raise _forbidden("You can only delete your own content")
+
+
+def assert_is_admin(user: User) -> None:
+    if not _is_admin(user):
+        raise _forbidden("Admin access required")
+
+
+def assert_can_view_report(report, user: User) -> None:
+    if _is_admin(user):
+        return
+    if str(report.reporter_id) != str(user.id):
+        raise _forbidden("You can only view your own reports")

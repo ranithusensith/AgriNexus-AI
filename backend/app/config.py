@@ -40,6 +40,16 @@ class Settings(BaseSettings):
     s3_secret_access_key: str = ""
     s3_public_url_base: str = ""
 
+    # Community post images (Module 3). Local backend only; with
+    # IMAGE_STORAGE_BACKEND=s3 the shared S3 storage is used instead.
+    community_upload_dir: str = "./uploads/community"
+    community_upload_url_prefix: str = "/uploads/community"
+
+    # Chat (Module 3): the app polls for new messages; this is the interval
+    # it is told to use (seconds), and the max messages per page.
+    chat_poll_interval_seconds: int = 5
+    chat_page_size_max: int = 100
+
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
 
     @property

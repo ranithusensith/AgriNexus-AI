@@ -25,6 +25,10 @@ class FarmerDashboardScreen extends StatelessWidget {
       _DashboardTile(t.weather, Icons.wb_cloudy_outlined, AppRoutes.weather, Colors.blue),
       _DashboardTile(t.farmerFeedback, Icons.report_problem_outlined, AppRoutes.farmerFeedback, Colors.orange),
       _DashboardTile(t.marketplace, Icons.storefront_outlined, AppRoutes.marketplace, Colors.purple),
+      _DashboardTile(t.community, Icons.forum_outlined, AppRoutes.community, Colors.indigo),
+      _DashboardTile(t.chats, Icons.chat_outlined, AppRoutes.conversations, Colors.cyan),
+      if (auth.currentUser?.role == 'admin')
+        _DashboardTile(t.adminReports, Icons.flag_outlined, AppRoutes.adminReports, Colors.red),
     ];
 
     return Scaffold(

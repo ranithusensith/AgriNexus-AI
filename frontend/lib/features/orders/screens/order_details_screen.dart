@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../shared/api/api_exception.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
@@ -53,11 +54,6 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
         _listing = results[0] as ListingDetail;
         _buyer = results[1] as SellerSummary;
         _state = _LoadState.success;
-      });
-    } on NetworkException catch (e) {
-      setState(() {
-        _error = e.message;
-        _state = _LoadState.error;
       });
     } on ApiException catch (e) {
       setState(() {

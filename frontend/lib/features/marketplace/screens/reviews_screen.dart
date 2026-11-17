@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../shared/api/api_exception.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
@@ -38,11 +39,6 @@ class _ReviewsScreenState extends State<ReviewsScreen> {
       setState(() {
         _reviews = reviews;
         _state = reviews.isEmpty ? _LoadState.empty : _LoadState.success;
-      });
-    } on NetworkException catch (e) {
-      setState(() {
-        _error = e.message;
-        _state = _LoadState.error;
       });
     } on ApiException catch (e) {
       setState(() {

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import '../../../shared/api/api_exception.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
-import '../../auth/auth_service.dart';
+import '../../../shared/state/auth_provider.dart';
 import '../../../shared/api/api_client.dart';
 import '../../../shared/widgets/state_widgets.dart';
 import '../../products/models/listing.dart';
@@ -53,11 +54,6 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
         _listing = results[0] as ListingDetail;
         _buyer = results[1] as SellerSummary;
         _state = _LoadState.success;
-      });
-    } on NetworkException catch (e) {
-      setState(() {
-        _error = e.message;
-        _state = _LoadState.error;
       });
     } on ApiException catch (e) {
       setState(() {
@@ -144,7 +140,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
   Widget _buildContent(BuildContext context) {
     final order = _order!;
     final listing = _listing!;
-    final auth = context.watch<AuthService>();
+    final auth = context.watch<AuthProvider>();
     final currentUserId = auth.currentUser?.id;
     final isSeller = currentUserId == order.sellerId;
     final isBuyer = currentUserId == order.buyerId;

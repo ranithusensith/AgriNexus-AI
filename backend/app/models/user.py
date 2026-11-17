@@ -23,6 +23,16 @@ class UserRole(str, enum.Enum):
     BUYER = "buyer"          # reserved for Module 2 (Marketplace)
     ADMIN = "admin"
     COMMUNITY_MEMBER = "community_member"  # reserved for Module 3
+    SUPPLIER = "supplier"    # Module 2 (Marketplace): sells inputs/equipment
+
+    # Lowercase aliases used by Marketplace code (UserRole.admin, ...).
+    # Same value => Python treats these as aliases of the members above, so
+    # they add no new DB enum labels.
+    farmer = "farmer"
+    buyer = "buyer"
+    admin = "admin"
+    supplier = "supplier"
+    community_member = "community_member"
 
 
 class User(Base):

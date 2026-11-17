@@ -73,6 +73,21 @@ class AppLocalizationsSi extends AppLocalizations {
   String get farmerFeedback => 'ගැටලුවක් වාර්තා කරන්න';
 
   @override
+  String get marketplace => 'වෙළඳපොළ';
+
+  @override
+  String get registerAs => 'ලියාපදිංචි වන්නේ';
+
+  @override
+  String get roleFarmer => 'ගොවියා';
+
+  @override
+  String get roleBuyer => 'ගැනුම්කරු';
+
+  @override
+  String get roleSupplier => 'සැපයුම්කරු';
+
+  @override
   String get district => 'දිස්ත්‍රික්කය';
 
   @override

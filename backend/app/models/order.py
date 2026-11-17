@@ -5,6 +5,7 @@ from sqlalchemy import (
     Column, String, Text, Integer, Numeric, Boolean, DateTime,
     ForeignKey, Enum, UniqueConstraint, Index,
 )
+from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
 
@@ -30,8 +31,8 @@ class Order(Base):
 
     id = Column(String(36), primary_key=True, default=_uuid)
     listing_id = Column(String(36), ForeignKey("listings.id"), nullable=False, index=True)
-    buyer_id = Column(String(36), ForeignKey("users.id"), nullable=False, index=True)
-    seller_id = Column(String(36), ForeignKey("users.id"), nullable=False, index=True)
+    buyer_id = Column(UUID(as_uuid=False), ForeignKey("users.id"), nullable=False, index=True)
+    seller_id = Column(UUID(as_uuid=False), ForeignKey("users.id"), nullable=False, index=True)
 
     quantity = Column(Numeric(12, 2), nullable=False)
     unit_price_snapshot = Column(Numeric(12, 2), nullable=False)
@@ -53,8 +54,8 @@ class Review(Base):
 
     id = Column(String(36), primary_key=True, default=_uuid)
     order_id = Column(String(36), ForeignKey("orders.id"), nullable=False, unique=True)
-    reviewer_id = Column(String(36), ForeignKey("users.id"), nullable=False, index=True)
-    reviewee_id = Column(String(36), ForeignKey("users.id"), nullable=False, index=True)
+    reviewer_id = Column(UUID(as_uuid=False), ForeignKey("users.id"), nullable=False, index=True)
+    reviewee_id = Column(UUID(as_uuid=False), ForeignKey("users.id"), nullable=False, index=True)
     rating = Column(Integer, nullable=False)  # 1-5, enforced in schema + CHECK constraint
     comment = Column(Text, nullable=True)
 

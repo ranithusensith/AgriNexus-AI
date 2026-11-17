@@ -4,7 +4,7 @@ A smart agriculture platform for Sri Lankan farmers, built as a university group
 
 | | |
 |---|---|
-| **Frontend** | Flutter (Dart) — Android + iOS |
+| **Frontend** | Flutter (Dart) — **Android** (iOS is out of scope) |
 | **Backend** | Python, FastAPI |
 | **Database** | PostgreSQL |
 | **AI/ML** | Python (TensorFlow / PyTorch / TFLite, pluggable) |
@@ -17,8 +17,8 @@ A smart agriculture platform for Sri Lankan farmers, built as a university group
 | # | Module | Owner | Status |
 |---|---|---|---|
 | 1 | Farmer + AI Agriculture | Member 1 (`member1/farmer-ai`) | Implemented — see below |
-| 2 | Marketplace | Member 2 | Not in this branch |
-| 3 | Communication + Community | Member 3 | Not in this branch |
+| 2 | Marketplace | Member 2 | Integrated: routers mounted, tables migrated, Flutter screens wired (needs `flutter analyze`) |
+| 3 | Communication + Community | Member 3 | Not started (chat/community/issue-report files are empty) |
 
 Each member works on their own branch and only touches their own module.
 
@@ -91,6 +91,12 @@ Login, Register, Farmer Dashboard, Farmer Profile, My Farms, Add/Edit Farm, Farm
 
 ---
 
+## Marketplace API (Module 2)
+
+Prefix `/api`: `/categories`, `/listings`, `/products`, `/orders`, `/reviews`, `/suppliers`, `/buyers`. Roles: `farmer`, `supplier` (can sell), `buyer`, `admin` (manages categories; cannot be self-registered, create it directly in the DB). Ownership rules live in `backend/app/core/permissions.py`.
+
+---
+
 ## Important notes on the AI features
 
 **The disease and pest detection models are mocks.** No trained model exists yet. The mock backend is deterministic (same image always gives the same result), and every API response carries `is_mock_result: true` plus a disclaimer. The Flutter UI shows a visible "demo mode" notice for mock results. It must not be presented as a real trained model.
@@ -114,14 +120,11 @@ No router, schema, or Flutter code needs to change.
 ### Prerequisites (macOS)
 
 - Flutter SDK, VS Code with the Flutter + Dart extensions
-- Xcode + CocoaPods (iOS builds)
 - Android Studio (Android SDK + emulator)
 - Python 3.12+
 - PostgreSQL 16
 
 ```bash
-xcode-select --install
-sudo gem install cocoapods
 brew install postgresql@16
 brew services start postgresql@16
 flutter doctor
@@ -138,7 +141,7 @@ cp .env.example .env        # edit DATABASE_URL and JWT_SECRET_KEY
 createuser agrinexus_user -P    # password: changeme (or update .env to match)
 createdb agrinexus_db -O agrinexus_user
 
-python3 -c "from app.database import Base, engine; import app.models; Base.metadata.create_all(bind=engine)"
+alembic upgrade head          # creates all tables (Module 1 + Marketplace)
 uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
@@ -148,23 +151,20 @@ Check `http://localhost:8000/health`.
 
 ```bash
 cd frontend
-flutter create --org com.agrinexus --project-name agrinexus_farmer .   # only if android/ios folders are missing
+flutter create --platforms=android --org com.agrinexus --project-name agrinexus_farmer .   # only if android/ is missing
 flutter pub get
 flutter analyze
 ```
 
-Add platform permissions (details in `frontend/README.md`): camera + internet on Android, camera + photo library descriptions on iOS.
+Android permissions (internet, camera) are already in `android/app/src/main/AndroidManifest.xml`; debug builds also allow plain-HTTP to the local backend.
 
 Run against the backend (the base URL differs per platform):
 
 ```bash
-# iOS Simulator
-flutter run -d ios --dart-define=API_BASE_URL=http://localhost:8000
+# Android emulator (no flag needed: defaults to http://10.0.2.2:8000, the emulator's alias for your Mac)
+flutter run -d android
 
-# Android emulator (10.0.2.2 is the emulator's alias for your Mac)
-flutter run -d android --dart-define=API_BASE_URL=http://10.0.2.2:8000
-
-# Physical device: use your Mac's LAN IP
+# Physical Android phone: use your Mac's LAN IP
 flutter run --dart-define=API_BASE_URL=http://192.168.1.x:8000
 ```
 
@@ -182,7 +182,8 @@ cd backend && pytest app/tests/ -v
 
 | Area | Status |
 |---|---|
-| Backend tests | 23/23 passing against real PostgreSQL 16 |
+| Backend tests | 28/28 passing against real PostgreSQL 16 (Module 1 + Marketplace) |
+| Migrations | `alembic upgrade head` / `downgrade -1` / `upgrade head` verified on a fresh DB; `alembic check` clean |
 | Backend live smoke test | Register, login, weather, crop recommendation, farm creation verified against a running server |
 | Frontend ↔ backend contract | Every API path and request/response field checked against the backend schemas |
 | Flutter app compile/run | **Not yet verified** — run `flutter analyze` and `flutter run` and fix anything they report before demoing |

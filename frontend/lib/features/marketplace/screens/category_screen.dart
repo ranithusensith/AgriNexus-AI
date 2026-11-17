@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../shared/api/api_exception.dart';
 import 'package:provider/provider.dart';
 
 import '../../../shared/api/api_client.dart';
@@ -40,11 +41,6 @@ class _CategoryScreenState extends State<CategoryScreen> {
       setState(() {
         _listings = result.items;
         _state = _listings.isEmpty ? _LoadState.empty : _LoadState.success;
-      });
-    } on NetworkException catch (e) {
-      setState(() {
-        _error = e.message;
-        _state = _LoadState.error;
       });
     } on ApiException catch (e) {
       setState(() {

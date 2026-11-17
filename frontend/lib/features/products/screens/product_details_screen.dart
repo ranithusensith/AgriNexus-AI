@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import '../../../shared/api/api_exception.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
-import '../../auth/auth_service.dart';
+import '../../../shared/state/auth_provider.dart';
 import '../../../shared/api/api_client.dart';
 import '../../../shared/widgets/state_widgets.dart';
 import '../models/listing.dart';
@@ -44,11 +45,6 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
       setState(() {
         _listing = detail;
         _state = _LoadState.success;
-      });
-    } on NetworkException catch (e) {
-      setState(() {
-        _error = e.message;
-        _state = _LoadState.error;
       });
     } on ApiException catch (e) {
       setState(() {
@@ -151,7 +147,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     final listing = _listing;
-    final auth = context.watch<AuthService>();
+    final auth = context.watch<AuthProvider>();
     final isOwnListing = listing != null && auth.currentUser?.id == listing.sellerId;
 
     return Scaffold(

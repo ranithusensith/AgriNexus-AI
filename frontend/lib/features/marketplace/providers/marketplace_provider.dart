@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart' hide Category;
+import '../../../shared/api/api_exception.dart';
 
 import '../../../shared/api/api_client.dart';
 import '../models/category.dart';
@@ -92,9 +93,6 @@ class MarketplaceProvider extends ChangeNotifier {
       _total = result.total;
       products = append ? [...products, ...result.items] : result.items;
       productsStatus = products.isEmpty ? LoadStatus.empty : LoadStatus.success;
-    } on NetworkException catch (e) {
-      errorMessage = e.message;
-      productsStatus = LoadStatus.error;
     } on ApiException catch (e) {
       errorMessage = e.message;
       productsStatus = LoadStatus.error;

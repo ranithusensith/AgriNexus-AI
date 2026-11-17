@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../shared/api/api_exception.dart';
 import 'package:provider/provider.dart';
 
 import '../../../shared/api/api_client.dart';
@@ -53,11 +54,6 @@ class _FarmerProfileScreenState extends State<FarmerProfileScreen> {
         _rating = ratingData['average_rating'] != null ? (ratingData['average_rating'] as num).toDouble() : null;
         _reviewCount = ratingData['review_count'] as int? ?? 0;
         _state = _LoadState.success;
-      });
-    } on NetworkException catch (e) {
-      setState(() {
-        _error = e.message;
-        _state = _LoadState.error;
       });
     } on ApiException catch (e) {
       setState(() {

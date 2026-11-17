@@ -56,4 +56,7 @@ def require_role(*allowed_roles: UserRole):
     return role_checker
 
 
+# Plural alias: Marketplace routers call require_roles(...)
+require_roles = require_role
+
 get_current_farmer = require_role(UserRole.FARMER, UserRole.ADMIN)

@@ -154,7 +154,7 @@ def send_inquiry(
     listing = db.query(Listing).filter(Listing.id == listing_id).first()
     if not listing:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Listing not found")
-    if listing.seller_id == current_user.id:
+    if str(listing.seller_id) == str(current_user.id):
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="You cannot inquire about your own listing")
 
     inquiry = Inquiry(listing_id=listing.id, buyer_id=current_user.id, message=payload.message)

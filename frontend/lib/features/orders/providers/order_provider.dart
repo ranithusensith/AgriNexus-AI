@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import '../../../shared/api/api_exception.dart';
 
 import '../../../shared/api/api_client.dart';
 import '../models/order.dart';
@@ -23,9 +24,6 @@ class OrderProvider extends ChangeNotifier {
     try {
       myOrders = await _api.getMyOrdersAsBuyer();
       myOrdersStatus = myOrders.isEmpty ? LoadStatus.empty : LoadStatus.success;
-    } on NetworkException catch (e) {
-      errorMessage = e.message;
-      myOrdersStatus = LoadStatus.error;
     } on ApiException catch (e) {
       errorMessage = e.message;
       myOrdersStatus = LoadStatus.error;
@@ -39,9 +37,6 @@ class OrderProvider extends ChangeNotifier {
     try {
       receivedOrders = await _api.getOrdersReceivedAsSeller();
       receivedOrdersStatus = receivedOrders.isEmpty ? LoadStatus.empty : LoadStatus.success;
-    } on NetworkException catch (e) {
-      errorMessage = e.message;
-      receivedOrdersStatus = LoadStatus.error;
     } on ApiException catch (e) {
       errorMessage = e.message;
       receivedOrdersStatus = LoadStatus.error;

@@ -73,6 +73,21 @@ class AppLocalizationsEn extends AppLocalizations {
   String get farmerFeedback => 'Report an Issue';
 
   @override
+  String get marketplace => 'Marketplace';
+
+  @override
+  String get registerAs => 'Register as';
+
+  @override
+  String get roleFarmer => 'Farmer';
+
+  @override
+  String get roleBuyer => 'Buyer';
+
+  @override
+  String get roleSupplier => 'Supplier';
+
+  @override
   String get district => 'District';
 
   @override

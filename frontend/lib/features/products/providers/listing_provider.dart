@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import '../../../shared/api/api_exception.dart';
 
 import '../../../shared/api/api_client.dart';
 import '../models/listing.dart';
@@ -20,9 +21,6 @@ class ListingProvider extends ChangeNotifier {
     try {
       myListings = await _api.getMyListings();
       status = myListings.isEmpty ? LoadStatus.empty : LoadStatus.success;
-    } on NetworkException catch (e) {
-      errorMessage = e.message;
-      status = LoadStatus.error;
     } on ApiException catch (e) {
       errorMessage = e.message;
       status = LoadStatus.error;

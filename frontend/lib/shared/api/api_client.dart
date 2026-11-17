@@ -59,6 +59,13 @@ class ApiClient {
     });
   }
 
+  Future<dynamic> patch(String path, {Map<String, dynamic>? body}) async {
+    return _send(() async {
+      final headers = await _authHeaders();
+      return _http.patch(_uri(path), headers: headers, body: jsonEncode(body ?? {}));
+    });
+  }
+
   Future<dynamic> delete(String path) async {
     return _send(() async {
       final headers = await _authHeaders();

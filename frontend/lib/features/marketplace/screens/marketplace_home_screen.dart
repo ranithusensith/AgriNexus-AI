@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../auth/auth_service.dart';
+import '../../../shared/state/auth_provider.dart';
 import '../../../shared/widgets/state_widgets.dart';
 import '../models/category.dart';
 import '../../products/models/listing.dart';
@@ -38,7 +38,7 @@ class _MarketplaceHomeScreenState extends State<MarketplaceHomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final auth = context.watch<AuthService>();
+    final auth = context.watch<AuthProvider>();
     final role = auth.currentUser?.role;
     final isSeller = role == 'farmer' || role == 'supplier';
 

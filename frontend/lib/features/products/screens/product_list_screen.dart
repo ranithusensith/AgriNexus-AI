@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../shared/api/api_exception.dart';
 
 import '../../../shared/api/api_client.dart';
 import '../../../shared/widgets/state_widgets.dart';
@@ -40,11 +41,6 @@ class _ProductListScreenState extends State<ProductListScreen> {
       setState(() {
         _listings = items;
         _state = items.isEmpty ? _LoadState.empty : _LoadState.success;
-      });
-    } on NetworkException catch (e) {
-      setState(() {
-        _error = e.message;
-        _state = _LoadState.error;
       });
     } on ApiException catch (e) {
       setState(() {

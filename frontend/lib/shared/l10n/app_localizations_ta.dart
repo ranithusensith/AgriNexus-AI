@@ -73,6 +73,21 @@ class AppLocalizationsTa extends AppLocalizations {
   String get farmerFeedback => 'பிரச்சினையைப் புகாரளிக்க';
 
   @override
+  String get marketplace => 'சந்தை';
+
+  @override
+  String get registerAs => 'பதிவு செய்யும் வகை';
+
+  @override
+  String get roleFarmer => 'விவசாயி';
+
+  @override
+  String get roleBuyer => 'வாங்குபவர்';
+
+  @override
+  String get roleSupplier => 'சப்ளையர்';
+
+  @override
   String get district => 'மாவட்டம்';
 
   @override
